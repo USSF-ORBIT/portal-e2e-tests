@@ -27,7 +27,7 @@ jobs:
       - name: Check out portal client
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
         with:
-          repository: USSF-ORBIT/ussf-portal-cms
+          repository: USSF-ORBIT/ussf-portal-client
           path: ./ussf-portal-client
 
       - name: Check out cms
