@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "repository": "git@github.com:USSF-ORBIT/portal-e2e-tests.git",
   "private": true,
+  "engines": {
+    "node": "14.19.3"
+  },
   "devDependencies": {
     "@testing-library/cypress": "8.0.2",
     "axe-core": "4.4.1",
