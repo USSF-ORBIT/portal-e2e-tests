@@ -15,7 +15,6 @@ jobs:
         with:
           path: ./e2e-tests
 
-    steps:
       - name: Read Node.js version from package.json
         run: echo ::set-output name=nodeVersion::$(node -p "require('./package.json').engines.node")
         id: engines
