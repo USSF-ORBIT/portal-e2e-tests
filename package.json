@@ -1,0 +1,14 @@
+{
+  "name": "portal-e2e-tests",
+  "version": "1.0.0",
+  "repository": "git@github.com:USSF-ORBIT/portal-e2e-tests.git",
+  "private": true,
+  "devDependencies": {
+    "@testing-library/cypress": "8.0.2",
+    "axe-core": "4.4.1",
+    "cypress": "9.4.1",
+    "cypress-axe": "0.14.0",
+    "mkdirp": "1.0.4",
+    "mongodb": "3.7.3"
+  }
+}
