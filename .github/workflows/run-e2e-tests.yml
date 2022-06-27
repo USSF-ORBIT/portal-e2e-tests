@@ -1,0 +1,44 @@
+name: Build & run E2E tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out E2E tests repo
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        with:
+          path: ./e2e-tests
+
+      - name: Check out portal client
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        with:
+          repository: USSF-ORBIT/ussf-portal-cms
+          path: ./ussf-portal-client
+
+      - name: Check out cms
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3
+        with:
+          repository: USSF-ORBIT/ussf-portal-cms
+          path: ./ussf-portal-cms
+
+      - name: Docker compose
+        run: docker-compose up -d
+        working-directory: ./e2e-tests
+
+      - name: Docker logs
+        uses: jwalton/gh-docker-logs@v2.2.0
+        with:
+          dest: './docker-logs'
+
+      - name: Upload logs
+        uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535 # tag=v3
+        if: always()
+        with:
+          name: container-logs
+          path: docker-logs
