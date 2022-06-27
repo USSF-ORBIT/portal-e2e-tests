@@ -7,11 +7,16 @@
     "node": "14.19.3"
   },
   "devDependencies": {
+    "@playwright-testing-library/test": "4.2.0",
+    "@playwright/test": "1.20.2",
     "@testing-library/cypress": "8.0.2",
     "axe-core": "4.4.1",
+    "axe-playwright": "1.1.11",
     "cypress": "9.4.1",
     "cypress-axe": "0.14.0",
+    "eslint-plugin-playwright": "0.8.0",
     "mkdirp": "1.0.4",
-    "mongodb": "3.7.3"
+    "mongodb": "3.7.3",
+    "pg": "8.7.3"
   }
 }
